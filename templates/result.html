@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Calculator Results</title>
+</head>
+<body>
+    <h1>Macro Calculation Results</h1>
+
+    <p><strong>Daily Calories:</strong> {{ calories }}</p>
+    <p><strong>Protein:</strong> {{ protein }}g</p>
+    <p><strong>Carbs:</strong> {{ carbs }}g</p>
+    <p><strong>Fats:</strong> {{ fats }}g</p>
+
+    <h2>Meal Plan</h2>
+    <ul>
+        {% for meal, foods in meal_plan.items() %}
+            <li><strong>{{ meal }}:</strong> {{ foods | join(", ") }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/">Back to Calculator</a>
+</body>
+</html>
