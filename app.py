@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import random
+import os
 
 def calculate_bmr(weight, height, age, gender):
     if gender == "male":
@@ -74,4 +75,5 @@ def home():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render assigns a dynamic port
+    app.run(host="0.0.0.0", port=port, debug=True)
